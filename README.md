@@ -29,6 +29,22 @@ Or run manually in the foreground:
 radpresence run
 ```
 
+## Web UI (optional)
+
+RAD Presence includes a browser-based UI for live status, logs, and settings. Enable it:
+
+```sh
+radpresence set --web-ui
+```
+
+Then open it in your browser:
+
+```sh
+radpresence open
+```
+
+Or navigate to `http://127.0.0.1:7842` directly. The UI is only accessible from your local machine.
+
 ## Update
 
 ```sh
