@@ -17,10 +17,11 @@ Save your RetroAchievements credentials:
 radpresence set --username YOUR_RA_USERNAME --apikey YOUR_API_KEY
 ```
 
-Then start as a background service (starts automatically on login):
+Install and start as a background service (starts automatically on login):
 
 ```sh
-brew services start radpresence
+radpresence install
+radpresence start
 ```
 
 Or run manually in the foreground:
@@ -50,6 +51,8 @@ Or navigate to `http://127.0.0.1:7842` directly. The UI is only accessible from 
 ```sh
 brew update
 brew upgrade radpresence
+radpresence stop
+radpresence start
 ```
 
 ## More

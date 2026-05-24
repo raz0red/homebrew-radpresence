@@ -16,20 +16,14 @@ class Radpresence < Formula
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/radiscordpresence"
   end
 
-  service do
-    run [opt_bin/"radpresence", "run"]
-    keep_alive true
-    log_path var/"log/radpresence.log"
-    error_log_path var/"log/radpresence.log"
-  end
-
   def caveats
     <<~EOS
-      Before starting the service, save your RetroAchievements credentials:
+      Save your RetroAchievements credentials:
         radpresence set --username YOUR_RA_USERNAME --apikey YOUR_API_KEY
 
-      Then start the service:
-        brew services start radpresence
+      Install and start as a background service (starts automatically on login):
+        radpresence install
+        radpresence start
 
       Or run it manually in the foreground:
         radpresence run
